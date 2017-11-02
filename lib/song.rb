@@ -18,10 +18,8 @@ class Song
   end
 
   def self.create_by_name(name)
-    new_song = Song.new
-    new_song.name = name
-    @@all << new_song
-    return new_song
+    @@all << self.new_by_name(name)
+    return @@all.last
   end
 
   def self.find_by_name(name)
